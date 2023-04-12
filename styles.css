@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+@font-face {
+  font-family: "Bluu";
+  src: url("https://munusshih.github.io/p5.zine/assets/BluuNext-Bold.otf");
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  background: url(bg.png) no-repeat fixed;
+  scroll-behavior: smooth;
+}
+
+canvas {
+  display: block;
+}
+
+p {
+  text-align: center;
+  font-family: "Inconsolata", monospace;
+  color: red;
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  overflow-wrap: break-word;
+}
+
+nav {
+  position: fixed;
+  background: none;
+  width: 100%;
+  text-align: left;
+  top: 0px;
+  background: white;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  border-bottom: 1px dashed red;
+}
+nav .title {
+  display: inline-block;
+  text-align: left;
+  margin: 0px;
+}
+nav .title h1 {
+  display: inline-block;
+  color: red;
+  font-family: "Bluu";
+  font-size: 1.8em;
+  line-height: 1;
+  padding-top: 20px;
+  margin: 0;
+  margin-right: 10px;
+  vertical-align: text-bottom;
+}
+nav .title h2 {
+  display: inline-block;
+  margin-right: 20px;
+  color: black;
+  font-weight: 100;
+  font-family: monospace;
+  font-size: 1em;
+}
+nav .title h2 a {
+  color: black;
+}
+nav .title h2 a:hover {
+  color: grey;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid red;
+}
+
+.button {
+  background: #fff;
+  border: 1px solid red;
+  border-radius: 30px;
+  color: red;
+  padding: 0px 15px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: super;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  height: 40px;
+  line-height: 40px;
+  font-family: "Inconsolata", monospace;
+}
+.button:hover {
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+.alt {
+  background: red;
+  color: white;
+  margin-top: 1em;
+  margin-right: 0.5em;
+  float: right;
+}
+.alt:hover {
+  background: white;
+  color: red;
+  cursor: pointer;
+}
+
+hr {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 0.1px solid red;
+}
+
+#doc,
+#doc p {
+  text-align: left;
+}
+
+h2 {
+  font-family: "Bluu";
+}
+
+h3 {
+  font-family: "Inconsolata", monospace;
+}
+
+h3 {
+  color: red;
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.function {
+  margin-bottom: 50px;
+}
+
+.function p {
+  color: black;
+  font-size: 20px;
+}
+
+.function b {
+  border-left: 1px solid grey;
+  padding-left: 10px;
+  color: grey;
+  font-size: 18px;
+  fontweight: normal;
+  font-family: "Inconsolata", monospace;
+}
+
+.function b::before {
+  content: "*example*: ";
+}
+
+span {
+  color: grey;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js">
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital@1&family=Bebas+Neue&family=Bungee+Shade&family=Rock+3D&family=Rubik+Puddles&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue&family=Faster+One&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <!--     <img src="cover.jpeg"> -->
+  <nav>
+    <div class="title">
+      <h1 id="genTitle">GenZ(ine)</h1>
+      <h2 id="author">by Munus Shih</h2>
+    </div>
+
+    <input type="button" value="*download .jpg*" onclick="downloadJPG()"
+      class="button" />
+    <input type="button" value="*download .pdf*" onclick="downloadPDF()"
+      class="button" />
+    <input type="button" value="*soure code*" id="sourceCode"
+      class="button" />
+    <input type="button" value="+"
+      onClick="document.getElementById('doc').scrollIntoView();"
+      class="button alt" />
+      <input type="button" value="help!"
+      onClick="document.getElementById('doc').scrollIntoView();"
+      class="button alt" />
+  </nav>
+
+  <div id="myCanvas"></div>
+  <footer>
+    <p id="des">
+      This zine is about...
+    </p>
+
+    <hr />
+
+    <p>
+      p5.(gen)Zine is free and friendly p5 community library created by Munus Shih and Iley Cao for anyone curious about creative code and zine-making. You are free to experiment with the idea of collaborative zine-coding, forking, remixing and explore what generative zine can do to contribute to community building.
+    </p>
+
+    <!--
+    <div id="doc">
+      <h2>*Cute Documentation*</h2>
+
+      <div class="function">
+        <h3>
+          background(), leftBackground(), rightBackground(),
+          selfieBackground()
+        </h3>
+        <p>
+          (R: <span>number(0-255)</span>, G: <span>number(0-255)</span>, B:
+          <span>number(0-255)</span>)
+        </p>
+        <b>background(255, 255, 255)</b>
+      </div>
+
+      <hr />
+
+      <div class="function">
+        <h3>fullPage(), leftPage(), rightPage()</h3>
+        <p>(material: <span>text or image</span>, offsetX, offsetY)</p>
+        <b>fullPage(img1)</b><br />
+        <b>leftPage('hi', 20, 20)</b>
+      </div>
+
+      <hr />
+
+      <div class="function">
+        <h3>randomLayout(), gridLayout(), glitchLayout()</h3>
+        <p>
+          (material: <span>text or image</span>, num: <span>number</span>,
+          repeat: <span>number</span>, randomize: <span>boolean</span>)
+        </p>
+        <b>randomLayout([img1, 'hello'], 5, 5, true)</b>
+      </div>
+
+      <hr />
+
+      <div class="function">
+        <h3>textSet()</h3>
+        <p>
+          (font: <span>fontName</span>, size: <span>number</span>, alignment:
+          <span>"left" or "right" or "center"</span>, line-height:
+          <span>number</span>)
+        </p>
+        <b>textSet("Averia Libre", 20, "LEFT", 1)</b>
+      </div>
+
+      <div class="function">
+        <h3>*Fonts*</h3>
+        <p>'Averia Libre'</p>
+        <p>'Bebas Neue'</p>
+        <p>'Bungee Shade'</p>
+        <p>'Rubik Puddles'</p>
+        <p>'Faster One'</p>
+        <b>textFont('Faster One')</b>
+      </div>
+
+      <hr />
+
+      <div class="function">
+        <h3>randomColor()</h3>
+        <p>(NOTHING) return: <span>[R,G,B]</span></p>
+        <b>fill(randomColor())</b>
+      </div>
+    </div> -->
+  </footer>
+
+
+  <!-- <script src="custom.js"></script> -->
+  <script src="zine.js"></script>
+  <script src="sketch.js"></script>
+</body>
+
+</html>
