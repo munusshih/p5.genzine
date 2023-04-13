@@ -5,18 +5,7 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "p5.sound.min.js": true,
-        "p5.js": true,
-        "styles.css": true,
-        "styles.css.map": true,
-        "LICENSE": true
+        "**/Thumbs.db": true
     },
-    "hide-files.files": [
-        "p5.sound.min.js",
-        "p5.js",
-        "styles.css",
-        "styles.css.map",
-        "LICENSE"
-    ]
+    "hide-files.files": []
 }

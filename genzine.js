@@ -75,7 +75,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 30px;
-  background: url(bg.png) no-repeat fixed var(--color-background);
+  background: url(./production/bg.png) no-repeat fixed var(--color-background);
   scroll-behavior: smooth;
   transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 420ms!important;
   transition-delay: 0!important;
