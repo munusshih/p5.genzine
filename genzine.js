@@ -43,23 +43,19 @@ document.body.innerHTML += `  <nav>
 </footer>`
 
 // css------------------------------------------
-const styless = `@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
-
+const styless = `@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
 @font-face {
   font-family: "Bluu";
   src: url("https://munusshih.github.io/p5.zine/assets/BluuNext-Bold.otf");
 }
-
-
-// creating a light and a dark theme on html level
-html[data-theme="light"] {
+html[data-theme=light] {
   --color-text: #333;
   --accent-color: #ed225d;
   --line-color: #ddd;
   --color-background: #fff;
 }
 
-html[data-theme="dark"] {
+html[data-theme=dark] {
   --color-text: #fff;
   --accent-color: #ed225d;
   --line-color: #ddd;
@@ -75,10 +71,10 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 30px;
-  background: url(./production/bg.png) no-repeat fixed var(--color-background);
+  background: url(bg.png) no-repeat fixed var(--color-background);
   scroll-behavior: smooth;
-  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 420ms!important;
-  transition-delay: 0!important;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 420ms !important;
+  transition-delay: 0 !important;
 }
 
 canvas {
@@ -87,7 +83,7 @@ canvas {
 
 p {
   text-align: center;
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   color: var(--accent-color);
   font-size: 12px;
   letter-spacing: -0.1px;
@@ -100,93 +96,70 @@ nav {
   width: 100%;
   text-align: left;
   top: 0px;
-
-  // background: var(--color-background);
   padding-bottom: 0.5em;
   padding-left: 1em;
-  // border-bottom: 1px dashed var(--line-color);
-  // border: 1px solid var(--accent-color);
-
-  .desktop {
-    // display: inline-block;
-    border: 1px solid var(--accent-color);
-    background: var(--color-background);
-
-    float: right;
-    margin-top: .5em;
-    margin-right: .5em;
-  }
-
-  .title {
-    display: inline-block;
-    text-align: left;
-    margin: 0px;
-
-    h1 {
-      display: inline-block;
-      color: var(--accent-color);
-      font-family: 'Bluu';
-      font-size: 1.8em;
-      line-height: 1;
-      // border: 1px solid black;
-      padding-top: 20px;
-      margin: 0;
-      margin-right: 10px;
-      vertical-align: text-bottom;
-    }
-
-    h2 {
-      display: inline-block;
-      margin-right: 20px;
-      color: var(--color-text);
-      font-weight: 100;
-      font-family: monospace;
-      font-size: 1em;
-
-      a {
-        color: var(--color-text);
-
-        &:hover {
-          color: var(--line-color);
-        }
-
-      }
-
-    }
-
-  }
-
 }
-
+nav .desktop {
+  border: 1px solid var(--accent-color);
+  background: var(--color-background);
+  float: right;
+  margin-top: 0.5em;
+  margin-right: 0.5em;
+}
+nav .title {
+  display: inline-block;
+  text-align: left;
+  margin: 0px;
+}
+nav .title h1 {
+  display: inline-block;
+  color: var(--accent-color);
+  font-family: "Bluu";
+  font-size: 1.8em;
+  line-height: 1;
+  padding-top: 20px;
+  margin: 0;
+  margin-right: 10px;
+  vertical-align: text-bottom;
+}
+nav .title h2 {
+  display: inline-block;
+  margin-right: 20px;
+  color: var(--color-text);
+  font-weight: 100;
+  font-family: monospace;
+  font-size: 1em;
+}
+nav .title h2 a {
+  color: var(--color-text);
+}
+nav .title h2 a:hover {
+  color: var(--line-color);
+}
 
 .label {
   position: fixed;
   background: var(--accent-color);
-  padding: .5em;
-
-
+  padding: 0.5em;
   font-family: monospace;
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-
+}
+.label a {
+  text-decoration: none;
+  color: white;
 }
 
-#nav-label{
+#nav-label {
   position: fixed;
   left: 1em;
   top: 5.1em;
 }
 
-#footer-label{
+#footer-label {
   position: relative;
   text-align: left;
   width: 15em;
-  padding-left: .5em;
+  padding-left: 0.5em;
   color: white;
-
   left: 0em;
   top: -3.7em;
 }
@@ -197,56 +170,47 @@ footer {
   padding: 20px;
   border-top: 1px solid var(--accent-color);
   margin-bottom: 3em;
-
-  p{
-    margin: auto;
-    text-align: center;
-    max-width: 700px;
-  }
-
+}
+footer p {
+  margin: auto;
+  text-align: center;
+  max-width: 700px;
 }
 
 .button {
   background: var(--color-background);
   border: 0px solid var(--accent-color);
-
   color: var(--accent-color);
   text-align: center;
   text-decoration: none;
-
   vertical-align: super;
   display: inline-block;
   font-size: 13px;
   margin: 4px 10px;
-
   height: 40px;
   min-width: 40px;
   line-height: 40px;
-  font-family: 'Inconsolata', monospace;
-
-  &:hover {
-    // background: var(--accent-color);
-    color: var(--accent-color);
-    cursor: pointer;
-
-    border-bottom: 1px dashed var(--accent-color);
-  }
+  font-family: "Inconsolata", monospace;
+}
+.button:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+  border-bottom: 1px dashed var(--accent-color);
 }
 
 .alt {
   background: var(--accent-color);
   color: white;
   margin: 0em;
-  margin-top: .3em;
+  margin-top: 0.3em;
   border-right: 1px solid var(--color-background);
   float: right;
-
-  &:hover {
-    background: var(--color-background);
-    color: var(--accent-color);
-    cursor: pointer;
-    border: 1px solid var(--accent-color);
-  }
+}
+.alt:hover {
+  background: var(--color-background);
+  color: var(--accent-color);
+  cursor: pointer;
+  border: 1px solid var(--accent-color);
 }
 
 hr {
@@ -261,11 +225,11 @@ hr {
 }
 
 h2 {
-  font-family: 'Bluu';
+  font-family: "Bluu";
 }
 
 h3 {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
 }
 
 h3 {
@@ -285,11 +249,10 @@ span {
   .desktop {
     display: none;
   }
-
   canvas {
     margin-top: 2em;
   }
-}`
+}/*# sourceMappingURL=styles.css.map */`
 
 
 let colorScheme
