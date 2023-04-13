@@ -1,6 +1,7 @@
 # p5.genzine
 ## How to start
-Import both p5.genzine library and the css file in.
+1. Duplicate this [p5 sketch](https://editor.p5js.org/munusshih/sketches/WyAAMH2gY)
+2.Import both p5.genzine library and the css file in.
 
 ```HTML
 <script src="https://munusshih.github.io/p5.genzine/main.js"></script>
