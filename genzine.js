@@ -7,10 +7,291 @@
  ====================================================================*/
 
 // HTML-----------------------------------------
-// document.body.innerHTML += `HTMLHEHE`
+document.body.innerHTML += `  <nav>
+    <div class="title">
+    <h1 id="genTitle">GenZ(ine)</h1>
+    <h2 id="author">by Munus Shih</h2>
+  </div>
+
+  <div class="desktop">
+    <input type="button" value="*download .jpg*" onclick="downloadJPG()"
+      class="button" />
+    <input type="button" value="*download .pdf*" onclick="downloadPDF()"
+      class="button" />
+    <input type="button" value="*soure code*" id="sourceCode"
+      class="button" />
+    <input type="button" value="more +" class="button alt" />
+    <a href="https://munusshih.com/p5-genzine"><input type="button"
+        value="help !" class="button alt" /></a>
+  </div>
+
+  <!-- <div class="mobile"></div> -->
+</nav>
+
+<div class="label" id="nav-label"><a href="https://github.com/munusshih/p5.genzine">made with
+    p5.(gen)zine</a></div>
+
+<div id="myCanvas"></div>
+<footer>
+  <div class="label" id="footer-label">
+    This zine is about...
+  </div>
+
+  <p id="des">
+    This zine is about...
+  </p>
+</footer>`
 
 // css------------------------------------------
-const styless = `.sss{}`
+const styless = `@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+
+@font-face {
+  font-family: "Bluu";
+  src: url("https://munusshih.github.io/p5.zine/assets/BluuNext-Bold.otf");
+}
+
+
+// creating a light and a dark theme on html level
+html[data-theme="light"] {
+  --color-text: #333;
+  --accent-color: #ed225d;
+  --line-color: #ddd;
+  --color-background: #fff;
+}
+
+html[data-theme="dark"] {
+  --color-text: #fff;
+  --accent-color: #ed225d;
+  --line-color: #ddd;
+  --color-background: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  background: url(bg.png) no-repeat fixed var(--color-background);
+  scroll-behavior: smooth;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 420ms!important;
+  transition-delay: 0!important;
+}
+
+canvas {
+  display: block;
+}
+
+p {
+  text-align: center;
+  font-family: 'Inconsolata', monospace;
+  color: var(--accent-color);
+  font-size: 12px;
+  letter-spacing: -0.1px;
+  overflow-wrap: break-word;
+}
+
+nav {
+  position: fixed;
+  background: none;
+  width: 100%;
+  text-align: left;
+  top: 0px;
+
+  // background: var(--color-background);
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  // border-bottom: 1px dashed var(--line-color);
+  // border: 1px solid var(--accent-color);
+
+  .desktop {
+    // display: inline-block;
+    border: 1px solid var(--accent-color);
+    background: var(--color-background);
+
+    float: right;
+    margin-top: .5em;
+    margin-right: .5em;
+  }
+
+  .title {
+    display: inline-block;
+    text-align: left;
+    margin: 0px;
+
+    h1 {
+      display: inline-block;
+      color: var(--accent-color);
+      font-family: 'Bluu';
+      font-size: 1.8em;
+      line-height: 1;
+      // border: 1px solid black;
+      padding-top: 20px;
+      margin: 0;
+      margin-right: 10px;
+      vertical-align: text-bottom;
+    }
+
+    h2 {
+      display: inline-block;
+      margin-right: 20px;
+      color: var(--color-text);
+      font-weight: 100;
+      font-family: monospace;
+      font-size: 1em;
+
+      a {
+        color: var(--color-text);
+
+        &:hover {
+          color: var(--line-color);
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+.label {
+  position: fixed;
+  background: var(--accent-color);
+  padding: .5em;
+
+
+  font-family: monospace;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+}
+
+#nav-label{
+  position: fixed;
+  left: 1em;
+  top: 5.1em;
+}
+
+#footer-label{
+  position: relative;
+  text-align: left;
+  width: 15em;
+  padding-left: .5em;
+  color: white;
+
+  left: 0em;
+  top: -3.7em;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid var(--accent-color);
+  margin-bottom: 3em;
+
+  p{
+    margin: auto;
+    text-align: center;
+    max-width: 700px;
+  }
+
+}
+
+.button {
+  background: var(--color-background);
+  border: 0px solid var(--accent-color);
+
+  color: var(--accent-color);
+  text-align: center;
+  text-decoration: none;
+
+  vertical-align: super;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 10px;
+
+  height: 40px;
+  min-width: 40px;
+  line-height: 40px;
+  font-family: 'Inconsolata', monospace;
+
+  &:hover {
+    // background: var(--accent-color);
+    color: var(--accent-color);
+    cursor: pointer;
+
+    border-bottom: 1px dashed var(--accent-color);
+  }
+}
+
+.alt {
+  background: var(--accent-color);
+  color: white;
+  margin: 0em;
+  margin-top: .3em;
+  border-right: 1px solid var(--color-background);
+  float: right;
+
+  &:hover {
+    background: var(--color-background);
+    color: var(--accent-color);
+    cursor: pointer;
+    border: 1px solid var(--accent-color);
+  }
+}
+
+hr {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 0.1px solid var(--accent-color);
+}
+
+#doc,
+#doc p {
+  text-align: left;
+}
+
+h2 {
+  font-family: 'Bluu';
+}
+
+h3 {
+  font-family: 'Inconsolata', monospace;
+}
+
+h3 {
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+}
+
+span {
+  color: grey;
+}
+
+@media screen and (max-width: 850px) {
+  .desktop {
+    display: none;
+  }
+
+  canvas {
+    margin-top: 2em;
+  }
+}`
+
+
 let colorScheme
 
 const styleSheet = document.createElement("style")

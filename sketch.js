@@ -18,28 +18,22 @@ function preload() {
 
 function drawPage() {
 
-// Cover ---------------------------------
-  // cover.randomLayout(["hello Bush", cat, selfie])
+/* Cover */
+  cover.randomLayout(["hello Bush", cat, selfie])
 
-// pageOne -------------------------------
+/*page One*/
   one.rect(one.mouseX, one.mouseY, 100)
 
-// pageTwo -------------------------------
+/*page Two*/
   two.frameRate(2)
   two.background(randomRGB2())
   two.fill(randomRGB3())
   two.glitchLayout(["hello Bush", cat, selfie])
 
-// pageThree -----------------------------
+/*page Three*/
   three.gridLayout(["hello Bush", cat, selfie])
 
-// back Cover ----------------------------
+/*back Cover*/
   back.background(randomRGB4())
-
-// all
-  allPages.rect(50, 50, 100)
 }
 
-// pageNumbers
-// print settings = paper, borderline, highres, export
-// typography = columns, border, gutter...
