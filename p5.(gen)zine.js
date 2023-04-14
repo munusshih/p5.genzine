@@ -12,21 +12,15 @@ document.body.innerHTML += `  <nav>
     <h1 id="genTitle">GenZ(ine)</h1>
     <h2 id="author">by Munus Shih</h2>
   </div>
+</nav>
 
   <div class="desktop">
     <input type="button" value="*download .jpg*" onclick="downloadJPG()"
-      class="button" />
+      class="button alt" />
     <input type="button" value="*download .pdf*" onclick="downloadPDF()"
-      class="button" />
-    <input type="button" value="*soure code*" id="sourceCode"
-      class="button" />
-    <input type="button" value="more +" class="button alt" />
-    <a href="https://munusshih.com/p5-genzine"><input type="button"
-        value="help !" class="button alt" /></a>
+      class="button alt" />
   </div>
 
-  <!-- <div class="mobile"></div> -->
-</nav>
 
 <div class="label" id="nav-label"><a href="https://github.com/munusshih/p5.genzine">made with
     p5.(gen)zine</a></div>
@@ -43,11 +37,13 @@ document.body.innerHTML += `  <nav>
 </footer>`
 
 // css------------------------------------------
-const styless = `@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+const styless = `
+  @import url('https://fonts.googleapis.com/css2?family=Averia+Libre&family=Bebas+Neue&family=Bungee+Shade&family=Faster+One&family=Inconsolata&family=Playfair+Display:ital@1&family=Rubik+Puddles&family=Ultra&display=swap');
 @font-face {
   font-family: "Bluu";
   src: url("https://munusshih.github.io/p5.zine/assets/BluuNext-Bold.otf");
 }
+
 html[data-theme=light] {
   --color-text: #333;
   --accent-color: #ed225d;
@@ -71,7 +67,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 30px;
-  background: url(bg.png) no-repeat fixed var(--color-background);
+  background: url(https://munusshih.github.io/p5.genzine/bg.png) no-repeat fixed var(--color-background);
   scroll-behavior: smooth;
   transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 420ms !important;
   transition-delay: 0 !important;
@@ -99,10 +95,18 @@ nav {
   padding-bottom: 0.5em;
   padding-left: 1em;
 }
-nav .desktop {
-  border: 1px solid var(--accent-color);
+.desktop {
+  position: fixed;
+  bottom: 0em;
+  padding-right: .5em;
+  width: 100%;
+  height: 2.5em;
+  text-align: right;
+  padding-top: .5em;
+  padding-bottom: 3.25em;
+  border-top: 1px solid var(--accent-color);
   background: var(--color-background);
-  float: right;
+  color: var(--color-text);
   margin-top: 0.5em;
   margin-right: 0.5em;
 }
@@ -178,7 +182,7 @@ footer p {
 }
 
 .button {
-  background: var(--color-background);
+  // background: var(--color-background);
   border: 0px solid var(--accent-color);
   color: var(--accent-color);
   text-align: center;
@@ -191,6 +195,7 @@ footer p {
   min-width: 40px;
   line-height: 40px;
   font-family: "Inconsolata", monospace;
+border: 1px solid var(--accent-color);
 }
 .button:hover {
   color: var(--accent-color);
@@ -199,18 +204,21 @@ footer p {
 }
 
 .alt {
-  background: var(--accent-color);
-  color: white;
-  margin: 0em;
-  margin-top: 0.3em;
-  border-right: 1px solid var(--color-background);
-  float: right;
-}
-.alt:hover {
   background: var(--color-background);
   color: var(--accent-color);
+
+  margin: 0em;
+  margin-top: 0.3em;
+  margin-left:.3em;
+  // border-right: 1px solid var(--color-background);
+  border-radius:20px;
+}
+.alt:hover {
+background: var(--accent-color);
+  color: white;
+
   cursor: pointer;
-  border: 1px solid var(--accent-color);
+
 }
 
 hr {
@@ -245,12 +253,9 @@ span {
   color: grey;
 }
 
-@media screen and (max-width: 850px) {
-  .desktop {
-    display: none;
-  }
+@media screen and (max-width: 500px) {
   canvas {
-    margin-top: 2em;
+    margin-top: 4em;
   }
 }/*# sourceMappingURL=styles.css.map */`
 
@@ -866,18 +871,15 @@ function calMousePos(arr){
 }
 
 function changeTitle(){
-  if(zine.title){
+  if(typeof zine.title !== "undefined"){
   document.querySelector("#genTitle").innerHTML = zine.title;}
-  if(zine.author){
+  if(typeof zine.author !== "undefined"){
     document.querySelector("#author").innerHTML = "by "+ zine.author;
-    if(zine.personalUrl){
+    if(typeof zine.personalUrl !== "undefined"){
   document.querySelector("#author").innerHTML = "by "+ "<a href="+zine.url+">"+zine.author+"</a>"}};
 
-  if(zine.description){
+  if(typeof zine.description !== "undefined"){
     document.querySelector("#des").innerHTML = "<p>"+zine.description+"</p>";
-  }
-  if(zine.sourceCode){
-    document.querySelector("#sourceCode").setAttribute('onclick', 'window.open("'+ zine.sourceCode+'","_blank")')
   }
 }
 
@@ -999,7 +1001,9 @@ function downloadPDF() {
   const imgData = canvas.toDataURL("image/jpeg", 1.0);
   const pdf = new jsPDF("p", "in", [8.5, 11]);
   pdf.addImage(imgData, "JPEG", 0, 0, 8.5, 11);
-  pdf.save("genZ.pdf");
+ if(typeof zine.title !=="undefined"){pdf.save(zine.title+".pdf");}
+  else{pdf.save("(gen)zine.pdf");}
+
   borderYes = true;
 }
 

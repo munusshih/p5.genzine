@@ -1,9 +1,17 @@
 # p5.genzine
-## How to start
+p5.(gen)Zine is a free and friendly library created by [Munus Shih](https://munusshih.com) and [Iley Cao](https://www.ileycao.com/) for anyone curious about creative code and zine-making. It utilizes the p5.js library to experiment with collaborative zine-coding, forking, remixing and explore what generative coded zine can do to contribute to community building.
+
+It is a open source project with MIT license.
+
+**CURRENT STATUS**: `v1.2` is in beta. Please feel free to send issues or pull request us!
+
+
+## Get Started
 
 You can either:
 
-- Duplicate this [p5 sketch](https://editor.p5js.org/munusshih/sketches/WyAAMH2gY)
+- Duplicate this [p5 sketch](https://editor.p5js.org/munusshih/sketches/WyAAMH2gY) to play in ih the p5 editor
+- Fork [this sketch]() to utilize the forking function in [Open Processing](https://openprocessing.org/) 
 - Import both p5.genzine library and the css file in.
 
 ```HTML
