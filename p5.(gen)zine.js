@@ -154,8 +154,8 @@ nav .title h2 a:hover {
 
 #nav-label {
   position: fixed;
-  left: 1em;
-  top: 5.1em;
+  right: 0em;
+  top: 0em;
 }
 
 #footer-label {
@@ -173,7 +173,7 @@ footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid var(--accent-color);
-  margin-bottom: 3em;
+  margin-bottom: 6em;
 }
 footer p {
   margin: auto;
