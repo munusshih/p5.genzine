@@ -1021,8 +1021,20 @@ function downloadPDF() {
   const imgData = canvas.toDataURL("image/jpeg", 1.0);
   const pdf = new jsPDF("p", "in", [8.5, 11]);
   pdf.addImage(imgData, "JPEG", 0, 0, 8.5, 11);
- if(typeof zine.title !=="undefined"){pdf.save(zine.title+".pdf");}
-  else{pdf.save("(gen)zine.pdf");}
+
+  let filename
+  if(typeof zine.title !=="undefined"){
+    fileName = zine.title
+  }
+  else{
+    fileName = "(gen)zine.pdf"
+  }
+
+  if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())) {
+    window.open(pdf.output('bloburl', { filename: fileName }))
+  } else {
+    pdf.save(fileName+".pdf")
+  }
 
   borderYes = true;
 }
