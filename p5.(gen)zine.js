@@ -931,7 +931,7 @@ function preSet() {
 
 function printSetting() {
 
-  const printRotate =  angleMode()==='degrees'? 90: PI;
+  const printRotate =  angleMode()==='degrees'? 90: HALF_PI;
 
   push()
   resizeCanvas(pHeight*2, pWidth*4);
