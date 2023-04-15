@@ -841,7 +841,7 @@ function draw() {
   if(typeof onePage === 'function'){onePage()}
   if(typeof twoPage === 'function'){twoPage()}
   if(typeof threePage === 'function'){threePage()}
-  if(typeof backPag === 'function'){backPage()}
+  if(typeof backPage === 'function'){backPage()}
 
   if (borderYes) {
     drawBorder();
