@@ -931,7 +931,7 @@ function preSet() {
 
 function printSetting() {
   push()
-  radiusMode(DEGREES)
+  angleMode(DEGREES)
   resizeCanvas(pHeight*2, pWidth*4);
   clear();
   background(255)
