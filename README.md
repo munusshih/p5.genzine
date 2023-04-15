@@ -29,7 +29,6 @@ const zine = {
   title: "GenZ(ine) V1.2",
   author: "Munus Shih",
   personalUrl: "https://munusshih.com",
-  sourceCode: "https://editor.p5js.org/munusshih/sketches/WyAAMH2gY",
   frameCount: 8,
   description: "Our objective is to create a coded zine that focuses on digital identity. We will use P5.js to teach ‘function’ and generate a collaborative digital profile zine in the end. We created some customized functions for people to play with this zine more easily."
 }

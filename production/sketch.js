@@ -16,6 +16,10 @@ function preload() {
   cat = loadImage("cat.png")
 }
 
+function setupPage(){
+  
+}
+
 function drawPage() {
 
 /* Cover */
