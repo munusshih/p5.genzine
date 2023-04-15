@@ -859,16 +859,30 @@ function changePixelDensity(num){
   })
 }
 
+const mouseAt = []
+
 function calMousePos(arr){
+
   const ratioer = pWidth/aWidth
   arr.map((el, i) =>{
-    if(i===0){
-    el.mouseX = constrain((mouseX - (width / 2 - aWidth/2)) * ratioer, -20, el.width+20)}
-    else{
-      el.mouseX = constrain((mouseX - (width / 2 - aWidth)) * ratioer, -20, el.width+20)
+    if(i===0 || i===4){
+    el.mouseX = constrain((mouseX - (width / 2 - aWidth/2)) * ratioer, -20, el.width+20)
     }
-    el.mouseY = constrain((mouseY - (gap + (aHeight + gap) * i))* ratioer, -20, el.height+20)
+    else{
+    el.mouseX = constrain((mouseX - (width / 2 - aWidth)) * ratioer, -20, el.width+20)
+    }
+    el.mouseY = constrain((mouseY - (gap + (aHeight + gap) * i)) * ratioer, -20, el.height+20)
+
+    if(el.mouseX > 0 && el.mouseX < el.width && el.mouseY > 0 && el.mouseY < el.height){
+      mouseAt[0] = i
+      if(el.mouseX < el.width/2){
+        mouseAt[1] = 1
+      } else {
+        mouseAt[0] = 0
+      }
+    }
   })
+
 }
 
 function changeTitle(){
