@@ -930,6 +930,8 @@ function preSet() {
 }
 
 function printSetting() {
+  push()
+  radiusMode(DEGREES)
   resizeCanvas(pHeight*2, pWidth*4);
   clear();
   background(255)
@@ -958,6 +960,7 @@ function printSetting() {
   translate(height - pWidth * 2, -pHeight);
   image(back, 0, 0);
   pop();
+  pop()
 }
 
 function drawBorder() {
