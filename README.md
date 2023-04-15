@@ -70,7 +70,7 @@ The `drawPage()` function here basically replace the original p5 `draw()` functi
 You can always hit the button to download your zine as a `.jpg` or `.pdf` that's ready to print! You can also share your source code to friends so they can play with your zine and get inspried :)
 
 ## Documentation / Tutorials
-- You can play with [this interactive documentation]() in OpenProcessing
+- You can play with [this interactive documentation]() in OpenProcessing (not finished!)
 - You can find the recording of a workshop we taught at 2022's Virtual Creative Coding Festival [here](https://www.youtube.com/watch?v=lAQc3Ij3O8k&ab_channel=ProcessingFoundation).
 - [This is the link](https://docs.google.com/presentation/d/1EJhxkK4Y07TfD7r6gUuXITqdYWmzFHE_BbPqNvFViuM/edit?usp=sharing) to our slides we used to teach `function` and `p5.gen(zine)` at POWRPLNT.
 - [There is the link](https://docs.google.com/presentation/d/1VEQN4Ro4POYxDtKL6aLBGOjlln6rnFerCH_ebJS2VUE/edit?usp=sharing) to the talk that Munus gave at 2023's Open Source Art Contributor's Conference.

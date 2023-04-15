@@ -779,12 +779,12 @@ p5.prototype.rightPage = function (material, offsetX, offsetY) {
 p5.prototype.textSet = function (
   theFont = "Averia Libre",
   theSize = 20,
-  theAlign = "LEFT",
+  theAlign = LEFT,
   theLead = theSize
 ) {
   this.textFont(theFont);
   this.textSize(theSize);
-  this.textAlign(theAlign.toUpperCase());
+  this.textAlign(theAlign);
   this.textLeading(theLead);
 };
 
