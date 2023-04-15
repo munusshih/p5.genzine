@@ -12,6 +12,7 @@ You can simply just:
 
 - Duplicate this [p5 sketch](https://editor.p5js.org/munusshih/sketches/WyAAMH2gY) to play in ih the p5 editor
 - Fork [this sketch](https://openprocessing.org/sketch/1897656) to utilize the forking function in [Open Processing](https://openprocessing.org/) 
+- Play with [this example of Processing-themed Stretching](https://openprocessing.org/sketch/1898736) to better understand it works!
 
 Or you could:
 
