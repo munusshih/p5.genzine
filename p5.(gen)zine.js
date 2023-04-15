@@ -930,33 +930,35 @@ function preSet() {
 }
 
 function printSetting() {
+
+  const printRotate =  angleMode()==='degrees'? 90: PI;
+
   push()
-  angleMode(DEGREES)
   resizeCanvas(pHeight*2, pWidth*4);
   clear();
   background(255)
   push();
-  rotate(90);
+  rotate(printRotate);
   translate(height - pWidth, -pHeight);
   image(cover, 0, 0);
   pop();
   push();
-  rotate(-90);
+  rotate(-printRotate);
   translate(-height, pHeight);
   image(one, 0, 0);
   pop();
   push();
-  rotate(-90);
+  rotate(-printRotate);
   translate(-height / 2, pHeight);
   image(two, 0, 0);
   pop();
   push();
-  rotate(90);
+  rotate(printRotate);
   translate(0, -pHeight);
   image(three, 0, 0);
   pop();
   push();
-  rotate(90);
+  rotate(printRotate);
   translate(height - pWidth * 2, -pHeight);
   image(back, 0, 0);
   pop();
