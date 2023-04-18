@@ -824,7 +824,7 @@ function setup() {
   angleMode(DEGREES);
   noStroke()
   changeTitle()
-  setupPage()
+  if(typeof setupPage === 'function'){setupPage()}
 
   selfie = createCapture(VIDEO);
   selfie.hide();
