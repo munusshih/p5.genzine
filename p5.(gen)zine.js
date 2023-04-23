@@ -876,15 +876,7 @@ p5.prototype.textBox = function (
           );
         }
 
-        this.push();
-        this.textAlign(textAlignMode, textVerticalAlignMode);
-        this.stroke(255, 0, 0);
-        this.noFill();
-        this.text(currentX + offsetX, currentY + offsetY, 20);
-        this.noStroke();
-        this.fill(0);
         this.text(currentLine, currentX + offsetX, currentY + offsetY);
-        this.pop();
 
         currentY += lineHeight;
 
