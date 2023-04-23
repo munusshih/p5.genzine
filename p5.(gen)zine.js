@@ -792,15 +792,57 @@ p5.prototype.textBox = function (
   inputText,
   startX,
   startY,
-  boxWidth = this.width,
-  boxHeight = this.height,
-  gapX = 0,
+  boxWidth,
+  boxHeight,
+  gapX,
   showBox = false
 ) {
-  let paragraphs = inputText.split('\n');
+  let paragraphs = inputText.split("\n");
   let lineHeight = this.textAscent() + this.textDescent();
-  let currentY = startY + lineHeight;
+  let currentY = startY;
   let currentX = startX;
+  let textAlignMode = this.textAlign().horizontal;
+  let textVerticalAlignMode = this.textAlign().vertical;
+
+  let linesInColumn = [];
+  let currentColumn = 0;
+  let linesCount = 0;
+
+  // Calculate the total number of lines in each column
+  for (const paragraph of paragraphs) {
+    let words = paragraph.split(" ");
+    let currentLine = words[0];
+
+    for (let i = 1; i < words.length + 1; i++) {
+      let word = words[i];
+      let nextLine = currentLine + " " + word;
+
+      if (i < words.length && ceil(this.textWidth(nextLine)) < boxWidth) {
+        currentLine = nextLine;
+      } else {
+        linesCount++;
+        currentY += lineHeight;
+
+        if (currentY + lineHeight > startY + boxHeight) {
+          linesInColumn[currentColumn] = linesCount;
+          linesCount = 0;
+          currentY = startY;
+          currentX += boxWidth + gapX;
+          currentColumn++;
+        }
+
+        currentLine = word;
+      }
+    }
+  }
+
+  linesInColumn[currentColumn] = linesCount;
+
+  // Draw the text with the correct alignment
+  currentY = startY;
+  currentX = startX;
+  currentColumn = 0;
+  linesCount = 0;
 
   for (const paragraph of paragraphs) {
     let words = paragraph.split(" ");
@@ -813,26 +855,51 @@ p5.prototype.textBox = function (
       if (i < words.length && ceil(this.textWidth(nextLine)) < boxWidth) {
         currentLine = nextLine;
       } else {
-        this.text(currentLine, currentX, currentY);
+        let offsetX = 0;
+        let offsetY = 0;
+
+        // Calculate horizontal offset based on textAlign
+        if (textAlignMode === this.CENTER) {
+          offsetX = boxWidth / 2;
+        } else if (textAlignMode === this.RIGHT) {
+          offsetX = boxWidth;
+        }
+
+        // Calculate vertical offset based on textBaseline
+        if (textVerticalAlignMode === this.CENTER) {
+          offsetY = ceil(
+            (boxHeight - (linesInColumn[currentColumn] - 1) * lineHeight) / 2
+          );
+        } else if (textVerticalAlignMode === this.BOTTOM) {
+          offsetY = ceil(
+            boxHeight - (linesInColumn[currentColumn] - 1) * lineHeight
+          );
+        }
+
+        this.push();
+        this.textAlign(textAlignMode, textVerticalAlignMode);
+        this.stroke(255, 0, 0);
+        this.noFill();
+        this.text(currentX + offsetX, currentY + offsetY, 20);
+        this.noStroke();
+        this.fill(0);
+        this.text(currentLine, currentX + offsetX, currentY + offsetY);
+        this.pop();
 
         currentY += lineHeight;
 
-        if (currentY + lineHeight >= startY + boxHeight) {
-          currentY = startY + lineHeight;
+        if (currentY + lineHeight > startY + boxHeight) {
+          currentY = startY;
           currentX += boxWidth + gapX;
+          currentColumn++;
         }
 
         currentLine = word;
       }
     }
-
-    currentY += lineHeight;
-
-    if (currentY + lineHeight >= startY + boxHeight) {
-      currentY = startY + lineHeight;
-      currentX += boxWidth + gapX;
-    }
   }
+
+  // console.log(linesInColumn);
 
   // Draw outlines for text boxes
   if (showBox === true) {
@@ -847,6 +914,7 @@ p5.prototype.textBox = function (
     this.pop();
   }
 };
+
 
 const rWidth = 198;
 const rHeight = 306;
