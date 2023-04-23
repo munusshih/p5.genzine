@@ -928,8 +928,14 @@ function setup() {
   myCanvas.parent("#myCanvas");
 
   updateAdaptiveWidth()
-  const fR = typeof zine.frameRate !== "undefined"? zine.frameRate : 10
-  const pD = typeof zine.pixelDensity !== "undefined"? zine.pixelDensity : 10
+
+  if(typeof zine !== "undefined"){
+    const fR = typeof zine.frameRate !== "undefined"? zine.frameRate : 10
+    const pD = typeof zine.pixelDensity !== "undefined"? zine.pixelDensity : 10
+  } else {
+    const fR = 10
+    const pD = 10
+  }
   // noLoop()
 
   cover = createGraphics(pWidth, pHeight);
@@ -1026,15 +1032,17 @@ function calMousePos(arr){
 }
 
 function changeTitle(){
-  if(typeof zine.title !== "undefined"){
-  document.querySelector("#genTitle").innerHTML = zine.title;}
-  if(typeof zine.author !== "undefined"){
-    document.querySelector("#author").innerHTML = "by "+ zine.author;
-    if(typeof zine.personalUrl !== "undefined"){
-  document.querySelector("#author").innerHTML = "by "+ "<a href="+zine.url+">"+zine.author+"</a>"}};
+  if(typeof zine !== "undefined"){
+    if(typeof zine.title !== "undefined"){
+    document.querySelector("#genTitle").innerHTML = zine.title;}
+    if(typeof zine.author !== "undefined"){
+      document.querySelector("#author").innerHTML = "by "+ zine.author;
+      if(typeof zine.personalUrl !== "undefined"){
+    document.querySelector("#author").innerHTML = "by "+ "<a href="+zine.url+">"+zine.author+"</a>"}};
 
-  if(typeof zine.description !== "undefined"){
-    document.querySelector("#des").innerHTML = "<p>"+zine.description+"</p>";
+    if(typeof zine.description !== "undefined"){
+      document.querySelector("#des").innerHTML = "<p>"+zine.description+"</p>";
+    }
   }
 }
 
