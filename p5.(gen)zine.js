@@ -788,6 +788,66 @@ p5.prototype.textSet = function (
   this.textLeading(theLead);
 };
 
+p5.prototype.textBox = function (
+  inputText,
+  startX,
+  startY,
+  boxWidth = this.width,
+  boxHeight = this.height,
+  gapX = 0,
+  showBox = false
+) {
+  let paragraphs = inputText.split('\n');
+  let lineHeight = this.textAscent() + this.textDescent();
+  let currentY = startY + lineHeight;
+  let currentX = startX;
+
+  for (const paragraph of paragraphs) {
+    let words = paragraph.split(" ");
+    let currentLine = words[0];
+
+    for (let i = 1; i < words.length + 1; i++) {
+      let word = words[i];
+      let nextLine = currentLine + " " + word;
+
+      if (i < words.length && ceil(this.textWidth(nextLine)) < boxWidth) {
+        currentLine = nextLine;
+      } else {
+        this.text(currentLine, currentX, currentY);
+
+        currentY += lineHeight;
+
+        if (currentY + lineHeight >= startY + boxHeight) {
+          currentY = startY + lineHeight;
+          currentX += boxWidth + gapX;
+        }
+
+        currentLine = word;
+      }
+    }
+
+    currentY += lineHeight;
+
+    if (currentY + lineHeight >= startY + boxHeight) {
+      currentY = startY + lineHeight;
+      currentX += boxWidth + gapX;
+    }
+  }
+
+  // Draw outlines for text boxes
+  if (showBox === true) {
+    this.push();
+    this.stroke(0, 0, 255);
+    this.strokeWeight(1);
+    this.noFill();
+    let numColumns = Math.ceil((currentX - startX) / (boxWidth + gapX)) + 1;
+    for (let i = 0; i < numColumns; i++) {
+      this.rect(startX + i * (boxWidth + gapX), startY, boxWidth, boxHeight);
+    }
+    this.pop();
+  }
+};
+
 const rWidth = 198;
 const rHeight = 306;
 const pWidth = 800
@@ -797,6 +857,7 @@ let cover, one, two, three, back;
 let aWidth, aHeight, gap;
 let borderYes = true;
 let selfie;
+const all =[];
 
 
 // p5 -----------------------------------
@@ -807,6 +868,8 @@ function setup() {
   myCanvas.parent("#myCanvas");
 
   updateAdaptiveWidth()
+  const fR = typeof zine.frameRate !== "undefined"? zine.frameRate : 10
+  const pD = typeof zine.pixelDensity !== "undefined"? zine.pixelDensity : 10
   // noLoop()
 
   cover = createGraphics(pWidth, pHeight);
@@ -815,11 +878,17 @@ function setup() {
   three = createGraphics(pWidth * 2, pHeight);
   back = createGraphics(pWidth, pHeight);
 
+  all.push(cover, one, two, three, back)
+
+  // pageSize attr
+  cover.pageSize = 'single'
+  one.pageSize = 'full'
+  two.pageSize = 'full'
+  three.pageSize = 'full'
+  back.pageSize = 'single'
+
   pixelDensity(2)
-  changePixelDensity(2);
-
-  const fR = zine.frameCount? zine.frameCount : 10
-
+  changePixelDensity(pD);
   frameRate(fR);
   angleMode(DEGREES);
   noStroke()
@@ -828,11 +897,15 @@ function setup() {
 
   selfie = createCapture(VIDEO);
   selfie.hide();
+
+  if(typeof coverSet === 'function'){coverSet()}
+  if(typeof oneSet === 'function'){oneSet()}
+  if(typeof twoSet === 'function'){twoSet()}
+  if(typeof threeSet === 'function'){threeSet()}
+  if(typeof backSet === 'function'){backSet()}
 }
 
 function draw() {
-  // if (borderYes) {
-  // }
 
   mousePosition()
 
@@ -842,6 +915,13 @@ function draw() {
   if(typeof twoPage === 'function'){twoPage()}
   if(typeof threePage === 'function'){threePage()}
   if(typeof backPage === 'function'){backPage()}
+
+  if(typeof coverDraw === 'function'){coverDraw()}
+  if(typeof oneDraw === 'function'){oneDraw()}
+  if(typeof twoDraw === 'function'){twoDraw()}
+  if(typeof threeDraw === 'function'){threeDraw()}
+  if(typeof backDraw === 'function'){backDraw()}
+
 
   if (borderYes) {
     drawBorder();
