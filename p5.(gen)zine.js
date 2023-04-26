@@ -917,6 +917,8 @@ let cover, one, two, three, back;
 let aWidth, aHeight, gap;
 let borderYes = true;
 let selfie;
+let fR = 10
+let pD = 10
 const all =[];
 
 
@@ -930,11 +932,11 @@ function setup() {
   updateAdaptiveWidth()
 
   if(typeof zine !== "undefined"){
-    const fR = typeof zine.frameRate !== "undefined"? zine.frameRate : 10
-    const pD = typeof zine.pixelDensity !== "undefined"? zine.pixelDensity : 10
+    fR = typeof zine.frameRate !== "undefined"? zine.frameRate : 10
+    pD = typeof zine.pixelDensity !== "undefined"? zine.pixelDensity : 10
   } else {
-    const fR = 10
-    const pD = 10
+    fR = 10
+    pD = 10
   }
   // noLoop()
 
