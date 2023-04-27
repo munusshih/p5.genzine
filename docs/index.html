@@ -1,32 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="vue.css">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css">
 </head>
+
 <body>
   <div data-app id="main">Please wait...</div>
 
-<script>
-  window.$docsify = {
-    el: '#main',
-    search: 'auto', // default
-    disqus: 'p5-genzine',
-  };
-</script>
+  <script>
+    window.$docsify = {
+      name: 'p5.genzine',
+      repo: 'munusshih/p5.genzine',
+      coverpage: true,
+
+      el: '#main',
+      search: 'auto', // default
+      loadSidebar: true,
+      subMaxLevel: 3,
+
+      // logo
+      // logo: '/_media/icon.svg',
+
+      themeColor: '#ED225C',
+      notFoundPage: 'pages/_404.md',
+
+      // discussion
+      disqus: 'p5-genzine',
+      share: {
+        reddit: true,
+        linkedin: true,
+        facebook: true,
+        twitter: true,
+        whatsapp: true,
+        telegram: true,
+        options: {
+          color: '#ED225C'
+        },
+      }
+    };
+  </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js">
+  </script>
+  <!-- external script -->
+  <script
+    src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js">
+  </script>
+  <!-- copy code -->
+  <script
+    src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js">
+  </script>
+  <!-- disqus -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js">
+  </script>
+  <!-- tab -->
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <script src="//cdn.jsdelivr.net/npm/codeblock-iframe@latest/dist/index.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/docsify-codeblock-iframe@latest/dist/index.min.js"></script>
+  <!-- share button -->
+  <script src="//unpkg.com/docsify-share/build/index.min.js"></script>
+  <!-- codeblock -->
+  <script
+    src="//cdn.jsdelivr.net/npm/codeblock-iframe@latest/dist/index.min.js">
+  </script>
+  <script
+    src="//cdn.jsdelivr.net/npm/docsify-codeblock-iframe@latest/dist/index.min.js">
+  </script>
 
 </body>
+
 </html>
