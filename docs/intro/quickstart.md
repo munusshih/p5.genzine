@@ -51,7 +51,7 @@ function drawPage() {
 
 ```
 
-## First Function
+## Your First Function 💖
 The library basically does everything that the p5 library does, while simply using `namespacing` to specify where you want to draw your shape.
 
 For instance, if you want to draw a circle on the cover page, you will write.

@@ -2,7 +2,7 @@
 
 p5.(gen)Zine is a free and friendly library created by [Munus Shih](https://munusshih.com) and [Iley Cao](https://www.ileycao.com/) for anyone curious about creative code and zine-making. It utilizes the p5.js library to experiment with collaborative zine-coding, forking, remixing and explore what generative coded zine can do to contribute to community building.
 
-See the [Quick start](quickstart.md) guide for more details.
+See the [Quick start](intro/quickstart.md) guide for more details.
 
 **CURRENT STATUS**: `v1.2` is in beta. Please feel free to send issues or pull request us!
 
@@ -25,7 +25,7 @@ Some of the functions we are thinking of adding includes
 - more detailed printSettings: `paper`, `borderline`, `highres`, `mp4 export`
 
 
-## You Can Help :heart:
+## You Can Help ❤️
 
 - By making a zine out of this and we can link them here :)
 - Use them in your class, workshops or just simply sharing!

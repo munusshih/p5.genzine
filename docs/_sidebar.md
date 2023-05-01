@@ -1,30 +1,30 @@
 <!-- docs/_sidebar.md -->
-- Introduction
+- 🎉 Introduction
 
-  - [Quick start](pages/quickstart.md)
-  - [Writing more pages](more-pages.md)
-  - [Custom navbar](custom-navbar.md)
-  - [Cover page](cover.md)
+  - [Homepage]()
+  - [Quick Start](intro/quickstart.md)
+  - [Motivation](intro/motivation.md)
 
-- Customization
+- ✍️ Learn
 
-  - [Configuration](configuration.md)
-  - [Themes](themes.md)
-  - [List of Plugins](plugins.md)
-  - [Write a Plugin](write-a-plugin.md)
-  - [Markdown configuration](markdown.md)
-  - [Language highlighting](language-highlight.md)
-  - [Emoji](emoji.md)
+  - [Installation](learn/installation.md)
+  - [Basic Functions](learn/basic.md)
+  - [Interactivity](learn/interact.md)
+  - [Randomize & Generative](learn/random.md)
+  - [Custom Functions](learn/custom.md)
+  - [System & Accessibility](learn/custom.md)
+  - [Multiplayer](learn/multi.md)
+  - [Forking & Remixing](learn/multi.md)
+  - [Examples & Next Step](learn/example.md)
 
-- Guide
+- 📚 Resources
 
-  - [Deploy](deploy.md)
-  - [Helpers](helpers.md)
-  - [Vue compatibility](vue.md)
-  - [CDN](cdn.md)
-  - [Offline Mode (PWA)](pwa.md)
-  - [Server-Side Rendering (SSR)](ssr.md)
-  - [Embed Files](embed-files.md)
+  - [For designers](resources/coded-zine.md)
+  - [For educators](resources/how-code.md)
+  - [For community-builders](resources/fork-zine.md)
+  - [Tools & Libraries](resouces/tools.md)
 
-- [Awesome docsify](awesome.md)
-- [Changelog](changelog.md)
+- 💻 Code 
+  - [Github](https://github.com/munusshih/p5.genzine)
+  - [Download](https://github.com/munusshih/p5.genzine)
+  - [Editor](https://github.com/munusshih/p5.genzine)
