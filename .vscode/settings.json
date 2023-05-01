@@ -5,17 +5,8 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "production": true,
-        "bg.png": true,
-        "cat.png": true,
-        "styles.css": true
+        "**/Thumbs.db": true
     },
-    "hide-files.files": [
-        "production",
-        "bg.png",
-        "cat.png",
-        "styles.css"
-    ],
+    "hide-files.files": [],
     "liveServer.settings.port": 5501
 }
