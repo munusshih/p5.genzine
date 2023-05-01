@@ -6,16 +6,12 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        "docs/p5.(gen)zine.min.js": true,
-        "docs/.nojekyll": true,
         "production": true,
         "bg.png": true,
         "cat.png": true,
         "styles.css": true
     },
     "hide-files.files": [
-        "docs/p5.(gen)zine.min.js",
-        "docs/.nojekyll",
         "production",
         "bg.png",
         "cat.png",

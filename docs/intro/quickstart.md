@@ -30,6 +30,10 @@ const zine = {
   description: "Our objective is to create a coded zine that focuses on digital identity. We will use P5.js to teach ‘function’ and generate a collaborative digital profile zine in the end. We created some customized functions for people to play with this zine more easily."
 }
 
+function setupPage() {
+  
+}
+
 function drawPage() {
 
 /* Cover */
@@ -54,14 +58,14 @@ function drawPage() {
 ## Your First Function 💖
 The library basically does everything that the p5 library does, while simply using `namespacing` to specify where you want to draw your shape.
 
-For instance, if you want to draw a circle on the cover page, you will write.
+The `drawPage()` function here basically replace the original p5 `draw()` function.
+
+For instance, if you want to draw a circle on the cover pages, you will write.
 
 ```javascript
 function drawPage(){
   cover.circle(30, 30, 10)
 }
 ```
-
-The `drawPage()` function here basically replace the original p5 `draw()` function.
 
 You can always hit the button to download your zine as a `.jpg` or `.pdf` that's ready to print! You can also share your source code to friends so they can play with your zine and get inspried :)

@@ -1,9 +1,10 @@
-/** ====================================================================
- * p5.(gen)Zine
+/**@preserve ==========================================================
+ *
+ *  p5.(gen)Zine
  * Copyright (c) 2023 Munus Shih, https://github.com/munusshih
  *
- * Licensed under the MIT License.
- * http://opensource.org/licenses/mit-license
+ * Licensed under GNU General Public License.
+ * https://www.gnu.org/licenses
  ====================================================================*/
 
 // HTML-----------------------------------------
