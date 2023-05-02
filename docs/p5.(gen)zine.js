@@ -1,6 +1,6 @@
 /**@preserve ==========================================================
  *
- *  p5.(gen)Zine
+ * p5.(gen)Zine
  * Copyright (c) 2023 Munus Shih, https://github.com/munusshih
  *
  * Licensed under GNU General Public License.
@@ -23,7 +23,7 @@ document.body.innerHTML += `  <nav>
   </div>
 
 
-<div class="label" id="nav-label"><a href="https://github.com/munusshih/p5.genzine">made with
+<div class="label" id="nav-label"><a href="https://github.com/munusshih/p5.genzine" target="_blank" rel="noopener noreferrer">>made with
     p5.(gen)zine</a></div>
 
 <div id="myCanvas"></div>
