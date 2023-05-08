@@ -1196,3 +1196,8 @@ function createRandomColor(num=0){
   }
   return randomColor
 }
+
+function button(name, func){
+  document.querySelectorAll(".desktop")[0].innerHTML += `<input type="button" value="${name}" onclick="${func}()"
+      class="button alt" />`
+}
