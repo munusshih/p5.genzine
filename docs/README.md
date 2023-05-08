@@ -9,6 +9,11 @@ See the [Quick start](intro/quickstart.md) guide for more details.
 ## Documentation / Tutorials
 - You can play with [this interactive documentation]() in OpenProcessing (not finished!)
 - You can find the recording of a workshop we taught at 2022's Virtual Creative Coding Festival [here](https://www.youtube.com/watch?v=lAQc3Ij3O8k&ab_channel=ProcessingFoundation).
+
+```link-preview
+https://www.youtube.com/watch?v=lAQc3Ij3O8k&ab_channel=ProcessingFoundation
+```
+
 - [This is the link](https://docs.google.com/presentation/d/1EJhxkK4Y07TfD7r6gUuXITqdYWmzFHE_BbPqNvFViuM/edit?usp=sharing) to our slides we used to teach `function` and `p5.gen(zine)` at POWRPLNT.
 - [There is the link](https://docs.google.com/presentation/d/1VEQN4Ro4POYxDtKL6aLBGOjlln6rnFerCH_ebJS2VUE/edit?usp=sharing) to the talk that Munus gave at 2023's Open Source Art Contributor's Conference.
 
@@ -35,4 +40,4 @@ Some of the functions we are thinking of adding includes
 
 ## License
 
-It is a open source project with [MIT license](https://github.com/munusshih/p5.genzine/blob/main/LICENSE).
+It is a open source project with [MIT license](https://github.com/munusshih/p5.genzine/blob/main/license).

@@ -1,7 +1,7 @@
 /**@preserve ==========================================================
  *
  * p5.(gen)Zine
- * Copyright (c) 2023 Munus Shih, https://github.com/munusshih
+ * Copyright (c) 2023 Munus Shih, Iley Cao, https://github.com/munusshih
  *
  * Licensed under GNU General Public License.
  * https://www.gnu.org/licenses
@@ -1008,8 +1008,6 @@ function changePixelDensity(num){
   })
 }
 
-const mouseAt = []
-
 function calMousePos(arr){
 
   const ratioer = pWidth/aWidth
@@ -1023,12 +1021,7 @@ function calMousePos(arr){
     el.mouseY = constrain((mouseY - (gap + (aHeight + gap) * i)) * ratioer, -20, el.height+20)
 
     if(el.mouseX > 0 && el.mouseX < el.width && el.mouseY > 0 && el.mouseY < el.height){
-      mouseAt[0] = i
-      if(el.mouseX < el.width/2){
-        mouseAt[1] = 1
-      } else {
-        mouseAt[0] = 0
-      }
+      el.mouseHere = true
     }
   })
 
