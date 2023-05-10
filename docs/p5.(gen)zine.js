@@ -593,11 +593,13 @@ p5.prototype.gridLayout = function (
 ) {
   this.push();
   this.translate(10, 30);
-  this.textSize(sizer * 2)
+
   let row = 0,
     column = 0;
   let num = 0;
   let sizer = size*10;
+
+  this.textSize(sizer * 2)
 
   for (let i = 0; i < repeat; i++) {
     for (let j = 0; j < word.length; j++) {
