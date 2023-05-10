@@ -932,7 +932,7 @@ function setup() {
 
   updateAdaptiveWidth()
 
-  if(typeof zine !== "undefined"){
+  if(typeof zine !== "undefined" && typeof zine !== null){
     fR = typeof zine.frameRate !== "undefined"? zine.frameRate : 10
     pD = typeof zine.pixelDensity !== "undefined"? zine.pixelDensity : 10
   } else {
@@ -964,8 +964,12 @@ function setup() {
   changeTitle()
   if(typeof setupPage === 'function'){setupPage()}
 
-  selfie = createCapture(VIDEO);
-  selfie.hide();
+  if(zine.cam === false || zine.cam === "false" || zine.cam === "False" || zine.cam === "FALSE"){
+
+  }else{
+    selfie = createCapture(VIDEO);
+    selfie.hide();
+  }
 
   if(typeof coverSet === 'function'){coverSet()}
   if(typeof oneSet === 'function'){oneSet()}
