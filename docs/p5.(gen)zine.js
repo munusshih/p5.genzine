@@ -556,7 +556,7 @@ p5.prototype.randomLayout = function (
 ) {
   const sizer = size*10;
   this.push();
-  this.textSize(sizer * 2)
+
   this.translate(this.width / 2, this.height / 2);
   for (let i = 0; i < repeat; i++) {
     for (let j = 0; j < word.length; j++) {
@@ -593,13 +593,10 @@ p5.prototype.gridLayout = function (
 ) {
   this.push();
   this.translate(10, 30);
-
   let row = 0,
     column = 0;
   let num = 0;
   let sizer = size*10;
-
-  this.textSize(sizer * 2)
 
   for (let i = 0; i < repeat; i++) {
     for (let j = 0; j < word.length; j++) {
@@ -644,8 +641,6 @@ p5.prototype.glitchLayout = function (
   } else {
     wave = random(10, 20);
   }
-
-  this.textSize(sizer * 2)
 
   for (let i = 0; i < repeat; i++) {
     const num = random(1, numMax)
