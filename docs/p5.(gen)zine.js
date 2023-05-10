@@ -1042,7 +1042,7 @@ function changeTitle(){
     document.querySelector("#author").innerHTML = "by "+ "<a href="+zine.url+">"+zine.author+"</a>"}};
 
     if(typeof zine.description !== "undefined"){
-      document.querySelector("#des").innerHTML = "<p>"+zine.description+"</p>";
+      document.querySelector("#des").innerHTML = zine.description;
     }
   }
 }
