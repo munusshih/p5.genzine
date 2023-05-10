@@ -791,11 +791,11 @@ p5.prototype.textSet = function (
 
 p5.prototype.textBox = function (
   inputText,
-  startX,
-  startY,
-  boxWidth,
-  boxHeight,
-  gapX,
+  startX = 0,
+  startY = 0,
+  boxWidth = this.width,
+  boxHeight = this.height,
+  gapX = 50,
   showBox = false
 ) {
   let paragraphs = inputText.split("\n");
