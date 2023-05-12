@@ -8,7 +8,10 @@
  ====================================================================*/
 
 // HTML-----------------------------------------
-document.body.innerHTML += `  <nav>
+document.body.innerHTML += `
+
+<base target="_blank">
+<nav>
     <div class="title">
     <h1 id="genTitle">GenZ(ine)</h1>
     <h2 id="author">by Munus Shih</h2>
@@ -35,6 +38,7 @@ document.body.innerHTML += `  <nav>
   <p id="des">
     This zine is about...
   </p>
+
 </footer>`
 
 // css------------------------------------------
