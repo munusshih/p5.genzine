@@ -958,8 +958,7 @@ function setup() {
   three.pageSize = 'full'
   back.pageSize = 'single'
 
-  pixelDensity(2)
-  changePixelDensity(pD);
+  pixelDensity(1)
   frameRate(fR);
   angleMode(DEGREES);
   noStroke()
@@ -1081,6 +1080,7 @@ function preSet() {
 function printSetting() {
 
   const printRotate =  angleMode()==='degrees'? 90: HALF_PI;
+  changePixelDensity(pD);
 
   push()
   resizeCanvas(pHeight*2, pWidth*4);
@@ -1115,6 +1115,7 @@ function printSetting() {
 }
 
 function drawBorder() {
+  push();
   preSet();
 
   clear();
@@ -1125,7 +1126,6 @@ function drawBorder() {
   image(three, width / 2 - aWidth, gap+(aHeight + gap)*3, aWidth*2, aHeight);
   image(back, width / 2 - aWidth/2, gap+(aHeight + gap)*4, aWidth, aHeight);
 
-  push();
 
   noStroke()
   fill('#ed225d')
