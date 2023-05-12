@@ -782,12 +782,19 @@ p5.prototype.textSet = function (
   theFont = "Averia Libre",
   theSize = 20,
   theAlign = LEFT,
-  theLead = theSize
+  theLead = theSize,
+  theColor
 ) {
+  this.push()
+  if(typeof theColor !== "undefined" && typeof theColor !== null){
+    this.fill(theColor)
+  }
   this.textFont(theFont);
   this.textSize(theSize);
   this.textAlign(theAlign);
   this.textLeading(theLead);
+  this.pop()
+
 };
 
 p5.prototype.textBox = function (
