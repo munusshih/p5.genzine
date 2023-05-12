@@ -920,7 +920,7 @@ let aWidth, aHeight, gap;
 let borderYes = true;
 let selfie;
 let fR = 10
-let pD = 10
+let pD = 1
 const all =[];
 
 
@@ -934,11 +934,8 @@ function setup() {
   updateAdaptiveWidth()
 
   if(typeof zine !== "undefined" && typeof zine !== null){
-    fR = typeof zine.frameRate !== "undefined"? zine.frameRate : 10
-    pD = typeof zine.pixelDensity !== "undefined"? zine.pixelDensity : 10
-  } else {
-    fR = 10
-    pD = 10
+    fR = typeof zine.frameRate !== "undefined"? zine.frameRate : fR
+    pD = typeof zine.pixelDensity !== "undefined"? zine.pixelDensity : pD
   }
   // noLoop()
 
