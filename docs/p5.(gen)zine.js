@@ -785,7 +785,6 @@ p5.prototype.textSet = function (
   theLead = theSize,
   theColor
 ) {
-  this.push()
   if(typeof theColor !== "undefined" && typeof theColor !== null){
     this.fill(theColor)
   }
@@ -793,8 +792,6 @@ p5.prototype.textSet = function (
   this.textSize(theSize);
   this.textAlign(theAlign);
   this.textLeading(theLead);
-  this.pop()
-
 };
 
 p5.prototype.textBox = function (
