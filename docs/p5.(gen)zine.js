@@ -1056,7 +1056,6 @@ function updateAdaptiveWidth(){
 
 function preSet() {
   resizeCanvas(windowWidth - 17, windowWidth * 3.3);
-  // clear()
   push();
   // textSize(20);
   // textFont("monospace");
@@ -1117,6 +1116,8 @@ function printSetting() {
 
 function drawBorder() {
   preSet();
+
+  clear();
 
   image(cover, width / 2 - aWidth/2, gap, aWidth, aHeight);
   image(one, width / 2 - aWidth, gap+(aHeight + gap), aWidth*2, aHeight);
