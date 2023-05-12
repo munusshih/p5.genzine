@@ -985,6 +985,14 @@ function setup() {
 
 function draw() {
 
+  if (borderYes) {
+    pixelDensity(2);
+    changePixelDensity(2);
+  } else {
+    pixelDensity(5);
+    changePixelDensity(5);
+  }
+
   mousePosition()
 
   if(typeof drawPage === 'function'){drawPage()}
@@ -1012,7 +1020,7 @@ function mousePosition(){
 }
 
 function changePixelDensity(num){
-  [cover, one, two, three, back].map(el => {
+  all.map(el => {
     el.pixelDensity(num)
   })
 }
