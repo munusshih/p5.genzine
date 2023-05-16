@@ -2,23 +2,22 @@
 - 🎉 Introduction
   
   - [Homepage]()
+  - [Quick Start](intro/quickstart.md)
   - [Example/Gallery](intro/example.md)
-  - [Motivation](intro/motivation.md)
+  - [About](intro/about.md)
 
 - ✍️ Getting Started
 
-  - [Quick Start](intro/quickstart.md)
-  - [Installation](learn/installation.md)
+  - [Forking & Remix](learn/fork-remix.md)
   - [Basic Functions](learn/basic.md)
   - [Interactivity](learn/interact.md)
-  - [Randomize & Generative](learn/random.md)
+  - [Export & Print](learn/export.md)
 
 - 📚 Further References
   
   - [Custom Functions](learn/custom.md)
-  - [System & Accessibility](learn/custom.md)
+  - [System & Templates](learn/system.md)
   - [Multiplayer](learn/multi.md)
-  - [Forking & Remixing](learn/multi.md)
   - [Next Step](learn/next-step.md)
 
 <!-- - 📚 Resources
@@ -28,10 +27,10 @@
   - [For community-builders](resources/fork-zine.md)
   - [Tools & Libraries](resouces/tools.md) -->
 
-- 💻 Code 
+<!-- - 💻 Code 
   - [Github](https://github.com/munusshih/p5.genzine)
   - [Download](https://github.com/munusshih/p5.genzine)
-  - [Editor](https://github.com/munusshih/p5.genzine)
+  - [Editor](https://github.com/munusshih/p5.genzine) -->
 
 
 

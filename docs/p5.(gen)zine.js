@@ -1130,7 +1130,7 @@ function drawBorder() {
   push();
   preSet();
 
-  clear();
+  // clear();
 
   image(cover, width / 2 - aWidth/2, gap, aWidth, aHeight);
   image(one, width / 2 - aWidth, gap+(aHeight + gap), aWidth*2, aHeight);
