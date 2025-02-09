@@ -1,4 +1,4 @@
-# [p5.genzine](https://munusshih.github.io/p5.genzine/)
+# [p5.zine](https://munusshih.github.io/p5.genzine/)
 
 p5.(gen)Zine is an open-sourced and friendly library created by [Munus Shih](https://munusshih.com) and [Iley Cao](https://www.ileycao.com/) for anyone curious about creative code and zine-making. 
 
