@@ -1050,7 +1050,7 @@ function changeTitle(){
     if(typeof zine.author !== "undefined"){
       document.querySelector("#author").innerHTML = "by "+ zine.author;
       if(typeof zine.personalUrl !== "undefined"){
-    document.querySelector("#author").innerHTML = "by "+ "<a href="+zine.url+">"+zine.author+"</a>"}};
+    document.querySelector("#author").innerHTML = "by "+ "<a href="+zine.personalUrl+">"+zine.author+"</a>"}};
 
     if(typeof zine.description !== "undefined"){
       document.querySelector("#des").innerHTML = zine.description;

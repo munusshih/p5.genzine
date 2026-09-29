@@ -871,7 +871,7 @@ function changeTitle(){
   if(zine.author){
     document.querySelector("#author").innerHTML = "by "+ zine.author;
     if(zine.personalUrl){
-  document.querySelector("#author").innerHTML = "by "+ "<a href="+zine.url+">"+zine.author+"</a>"}};
+  document.querySelector("#author").innerHTML = "by "+ "<a href="+zine.personalUrl+">"+zine.author+"</a>"}};
 
   if(zine.description){
     document.querySelector("#des").innerHTML = "<p>"+zine.description+"</p>";
